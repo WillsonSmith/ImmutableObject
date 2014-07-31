@@ -9,7 +9,7 @@ Setting items will only be allowed if you pass the `true` parameter for `isExten
 Objects you can extend
 ```
   var cars = {"truck": "ford", "sedan": "hyundai"};
-  var immutCars = new ImmutableObject(cars, false);
+  var immutCars = new ImmutableObject(cars, true);
   var immutableCars = immutCars.get();
 
   immutCars.set("economy", "honda");
@@ -21,7 +21,7 @@ Objects you cannot extend
 
 ```
   var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
-  var immutable = new ImmutableObject(desserts, true);
+  var immutable = new ImmutableObject(desserts, false);
   var immutableDessert = immutable.get();
 
   immutable.set('cookies', 'oreo');
@@ -40,3 +40,5 @@ the object to create/copy, and true/false as to whether it is an extensible obje
 to see your new values
 
 See index.html for the example
+
+`var ImmutableObject = function makeImmutable(obj, isExtensible)`
