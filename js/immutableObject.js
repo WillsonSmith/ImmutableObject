@@ -42,13 +42,7 @@ function addItem(addTo, item, val) {
 
     set: function(item, val) {
 
-      Object.defineProperty(immutable, item, {
-
-        enumerable: true,
-        writeable: false,
-        value: val
-
-      });
+      addItem(immutable, item, val);
 
     }
 
