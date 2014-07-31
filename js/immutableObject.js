@@ -4,21 +4,21 @@ var ImmutableObject = function makeImmutable(obj, preventExtension) {
   var mutable = obj;
   var immutable = {};
 
-  function addItem(addTo, item) {
+function addItem(addTo, item, val) {
 
-    Object.defineProperty(addTo, from, item, {
+  Object.defineProperty(addTo, item, {
 
-      enumerable: true,
-      writeable: false,
-      value: from[item]
+    enumerable: true,
+    writeable: false,
+    value: val
 
-    });
+  });
 
-  }
+}
 
   for (var item in mutable) {
 
-    addItem(immutable, mutable, item);
+    addItem(immutable, item, mutable[item]);
 
   }
 
@@ -32,15 +32,23 @@ var ImmutableObject = function makeImmutable(obj, preventExtension) {
 
     get: function() {
 
-      var returned = Object.create(immutable);
+      var returned = Object.preventExtensions(Object.create(immutable));
+      //make a copy so can't direct edit with object.property = X
+      //must use .set()
 
-      return Object.preventExtensions(returned);
+      return returned;
 
     },
 
     set: function(item, val) {
 
-      immutable[item] = val;
+      Object.defineProperty(immutable, item, {
+
+        enumerable: true,
+        writeable: false,
+        value: val
+
+      });
 
     }
 
