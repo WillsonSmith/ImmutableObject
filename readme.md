@@ -2,8 +2,7 @@
 
 ImmutableObject was created as a simple, client side Javascript way of making
 immutable objects. It uses a simple set of methods for getting and setting items.
-Setting items will only work so long as you don't pass in the optional `true` parameter for
-`preventExtension`.
+Setting items will only if you pass the `true` parameter for `isExtensible`.
 
 ##Basic Usage:
 

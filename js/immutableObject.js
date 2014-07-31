@@ -1,4 +1,4 @@
-var ImmutableObject = function makeImmutable(obj, preventExtension) {
+var ImmutableObject = function makeImmutable(obj, isExtensible) {
   "use strict";
 
   var mutable = obj;
@@ -22,7 +22,7 @@ function addItem(addTo, item, val) {
 
   }
 
-  if (!preventExtension) {
+  if (!isExtensible) {
 
     Object.preventExtensions(immutable);
 
