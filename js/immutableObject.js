@@ -22,7 +22,7 @@ function addItem(addTo, item, val) {
 
   }
 
-  if (preventExtension) {
+  if (!preventExtension) {
 
     Object.preventExtensions(immutable);
 

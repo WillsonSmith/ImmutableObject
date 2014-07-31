@@ -19,14 +19,14 @@
 
         //Can add items
         var cars = {"truck": "ford", "sedan": "hyundai"};
-        var immutCars = new ImmutableObject(cars, false);
+        var immutCars = new ImmutableObject(cars, true);
         var immutableCars = immutCars.get();
         immutCars.set("economy", "honda");
         console.log(immutableCars); //logs cars with honda
 
         //Can't add items
         var deserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
-        var immutable = new ImmutableObject(deserts, true);
+        var immutable = new ImmutableObject(deserts, false);
         var immutableDesert = immutable.get();
 
         immutable.set('cookies', 'oreo');
