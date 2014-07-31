@@ -25,9 +25,9 @@
         console.log(immutableCars); //logs cars with honda
 
         //Can't add items
-        var deserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
-        var immutable = new ImmutableObject(deserts, false);
-        var immutableDesert = immutable.get();
+        var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
+        var immutable = new ImmutableObject(desserts, false);
+        var immutableDessert = immutable.get();
 
         immutable.set('cookies', 'oreo');
         //results in "Uncaught TypeError: Can't add property cookies, object is not extensible"

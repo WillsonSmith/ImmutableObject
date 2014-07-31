@@ -21,9 +21,9 @@ Objects you can extend
 Objects you cannot extend
 
 ```
-  var deserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
-  var immutable = new ImmutableObject(deserts, true);
-  var immutableDesert = immutable.get();
+  var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
+  var immutable = new ImmutableObject(desserts, true);
+  var immutableDessert = immutable.get();
 
   immutable.set('cookies', 'oreo');
   //results in "Uncaught TypeError: Can't add property cookies, object is not extensible"
