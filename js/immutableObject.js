@@ -44,6 +44,26 @@ function addItem(addTo, item, val) {
 
       addItem(immutable, item, val);
 
+    },
+
+    addMethod: function(name, func) {
+
+      if (!this._.hasOwnProperty(name)) {
+
+        addItem(this._, name, func);
+
+      } else {
+
+        throw "The custom method \"" + name + "\" already exists";
+
+      }
+
+    },
+
+    _: {
+
+
+
     }
 
   };

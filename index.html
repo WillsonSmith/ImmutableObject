@@ -24,6 +24,25 @@
         immutCars.set("economy", "honda");
         console.log(immutableCars); //logs cars with honda
 
+				immutCars.addMethod("copyMutable", function(object) {
+
+					return Object.create(object);
+
+				});
+
+				var mutableCars = immutCars._.copyMutable(immutableCars);
+				mutableCars.sport = "Ferrari";
+				console.log(mutableCars);
+
+				//logs same as immutable but has Ferrari
+
+				/*immutCars.addModule("copyMutable", function(object) {
+
+					return Object.create(object);
+
+				});*/
+				//results in error - the module "copyMutable" already exists
+
         //Can't add items
         var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
         var immutable = new ImmutableObject(desserts, false);
