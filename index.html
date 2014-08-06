@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title></title>
-		<meta name='viewport' content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name='apple-mobile-web-app-capable' content='yes' />
-		<meta charset='utf-8' />
-	</head>
+  <head>
+    <title></title>
+  <meta name='viewport' content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta charset='utf-8' />
+</head>
 
-	<body>
-		<div id='container'>
-			<p>My view has been loaded</p>
-		</div>
+<body>
+  <div id='container'>
+  <p>My view has been loaded</p>
+  </div>
 
-		 <script src='js/immutableObject.js'></script>
+  <script src='js/immutableObject.js'></script>
 
      <script>
 
@@ -24,24 +24,24 @@
         immutCars.set("economy", "honda");
         console.log(immutableCars); //logs cars with honda
 
-				immutCars.addMethod("copyMutable", function(object) {
+        immutCars.addMethod("copyMutable", function(object) {
 
-					return Object.create(object);
+          return Object.create(object);
 
-				});
+        });
 
-				var mutableCars = immutCars._.copyMutable(immutableCars);
-				mutableCars.sport = "Ferrari";
-				console.log(mutableCars);
+        var mutableCars = immutCars._.copyMutable(immutableCars);
+        mutableCars.sport = "Ferrari";
+        console.log(mutableCars);
 
-				//logs same as immutable but has Ferrari
+        //logs same as immutable but has Ferrari
 
-				/*immutCars.addModule("copyMutable", function(object) {
+        /*immutCars.addModule("copyMutable", function(object) {
 
-					return Object.create(object);
+        return Object.create(object);
 
-				});*/
-				//results in error - the module "copyMutable" already exists
+        });*/
+        //results in error - the module "copyMutable" already exists
 
         //Can't add items
         var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
@@ -52,5 +52,5 @@
         //results in "Uncaught TypeError: Can't add property cookies, object is not extensible"
      </script>
 
-	</body>
+  </body>
 </html>
