@@ -16,11 +16,11 @@ function addItem(addTo, item, val) {
 
 }
 
-  for (var item in mutable) {
+  Object.keys(mutable).forEach(function(item) {
 
-    addItem(immutable, item, mutable[item]);
+        addItem(immutable, item, mutable[item]);
 
-  }
+  });
 
   if (!isExtensible) {
 
