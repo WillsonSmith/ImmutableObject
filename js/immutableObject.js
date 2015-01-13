@@ -1,4 +1,4 @@
-var ImmutableObject = function makeImmutable(obj, isExtensible) {
+var immutableObject = function makeImmutable(obj, isExtensible) {
   "use strict";
 
   var mutable = obj;

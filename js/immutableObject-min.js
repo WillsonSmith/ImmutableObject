@@ -1,1 +1,0 @@
-var ImmutableObject=function e(t,n){"use strict";function r(e,t,n){Object.defineProperty(e,t,{enumerable:!0,writeable:!1,value:n})}var c=t,i={};for(var u in c)r(i,u,c[u]);return n||Object.preventExtensions(i),{get:function(){var e=Object.preventExtensions(Object.create(i));return e},set:function(e,t){r(i,e,t)}}};

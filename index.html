@@ -3,33 +3,34 @@
 <html>
 	<head>
 		<title></title>
-		<meta name='viewport' content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name='apple-mobile-web-app-capable' content='yes' />
-		<meta charset='utf-8' />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta charset="utf-8" />
 	</head>
 
 	<body>
-		<div id='container'>
+		<div id="container">
 			<p>My view has been loaded</p>
 		</div>
 
-		 <script src='js/immutableObject.js'></script>
+		 <script src="js/immutableObject.js"></script>
 
      <script>
 
         //Can add items
         var cars = {"truck": "ford", "sedan": "hyundai"};
-        var immutCars = new ImmutableObject(cars, true);
+        var immutCars = immutableObject(cars, true);
         var immutableCars = immutCars.get();
         immutCars.set("economy", "honda");
+
         console.log(immutableCars); //logs cars with honda
 
         //Can't add items
         var desserts = {"pie": "apple", "icecream": "chocolate", "cake": "icing"};
-        var immutable = new ImmutableObject(desserts, false);
+        var immutable = immutableObject(desserts, false);
         var immutableDessert = immutable.get();
 
-        immutable.set('cookies', 'oreo');
+        immutable.set("cookies", "oreo");
         //results in "Uncaught TypeError: Can't add property cookies, object is not extensible"
      </script>
 
